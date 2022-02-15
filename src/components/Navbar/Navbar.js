@@ -1,5 +1,5 @@
 import './Navbar.css'
-
+// import TourDetails from '../TourDetails/TourDetails';
 import { Link } from 'react-router-dom';
 
 function Navbar() {

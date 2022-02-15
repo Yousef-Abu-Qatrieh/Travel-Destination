@@ -12,7 +12,8 @@ function Home() {
       
             <Routes>
 <Route path='/' element={ <Header  />} />
-{/* <Route path='/city/:id' element={ <Details/> }/>  */}
+{/* <Route path='/city/:id' element={ <TourDetails/> }/>  */}
+
  
 </Routes>
      <Tours data={data} />
