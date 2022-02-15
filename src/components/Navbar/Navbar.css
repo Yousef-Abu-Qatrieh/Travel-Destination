@@ -1,0 +1,16 @@
+
+  .navbarE {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 8px;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  
+  
+  .navbarA{
+    background: #ddd;
+    color: black;
+  }
