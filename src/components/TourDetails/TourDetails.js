@@ -1,25 +1,33 @@
-import Navbar from '../Navbar/Navbar';
-import { Link,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import data from '../../data/db.json'
-import '../Navbar/Navbar.css'
-const {id}=useParams();
+import { useState } from 'react';
 
-function TourDetails(props) {
+
+function TourDetails() {
+
+    const [readMore, setReadMore] = useState(false)
+    let { id } = useParams()
+
+    const result = data.filter((value) => value.id === id);
     return (
 
         <>
+            <h3>{result[0].name}</h3>
+            <p>
+                {readMore
+                    ? `Description : ${result[0].info}` : `Description : ${result[0].info.substring(0, 250)} ... `
 
-            
-            {props.data.map((meme,idx) => {
-                return (
-                    <div key={idx} >
-                        
-                        <Link className='navbarA' to={`/city/${meme.id}`}>  Details  </Link>
-                    </div>
-                );
-            })}
-            
-         
+
+                }
+                <button onClick={() => setReadMore(!readMore)}>
+                    {readMore ? "show less" : "show more"}
+                </button>
+
+            </p>
+            <p>{result[0].price}</p>
+            <img src={result[0].image} />
+
+
         </>
 
     );
